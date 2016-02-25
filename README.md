@@ -14,6 +14,10 @@ installing opencv: http://docs.opencv.org/2.4/doc/tutorials/introduction/linux_i
 
 compiling:
 ```
-cmake .
 make
+```
+
+running:
+```
+bin/spider
 ```
