@@ -5,7 +5,7 @@ project info
 
 **target platform:** x86/ARM linux
 
-**dependencies:** cmake, opencv3.1.0 (plus dependencies) 
+**dependencies:** cmake, opencv3.1.0 
 
 how to
 ------
