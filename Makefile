@@ -18,5 +18,5 @@ clean:
 	rm bin/*
 
 $(BIN)/%.o : $(SRC)/%.cpp
-	$(CXX) $(CFLAGS) -c -o $@ $<
+	$(CXX) $(CFLAGS) -Iinclude/ -c -o $@ $<
 

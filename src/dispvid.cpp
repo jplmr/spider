@@ -6,6 +6,8 @@
 #include <opencv2/opencv.hpp>
 #include <sys/time.h>
 
+#include "spider.hpp"
+
 using namespace cv;
 
 const Scalar BLACK = Scalar(0, 0, 0); // b, g, r

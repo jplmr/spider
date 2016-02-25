@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
-
-extern int dispvid(int argc, char** argv);
+#include "spider.hpp"
 
 int main(int argc, char** argv) {
     std::cout << "test" << std::endl;
