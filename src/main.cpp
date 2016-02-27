@@ -4,5 +4,5 @@
 
 int main(int argc, char** argv) {
     std::cout << "test" << std::endl;
-    dispcam(argc, argv);
+    dispvid(argc, argv);
 }

@@ -9,7 +9,7 @@ OBJS := $(addprefix $(BIN)/,$(notdir $(SRCS:.cpp=.o)))
 
 .PHONY: all
 
-all: $(BIN)/spider
+all: $(BIN)/spider $(BIN)/trainer
 
 $(BIN)/spider: $(OBJS)
 	$(CXX) $(CFLAGS) -o $@ $^ $(LIBS)
@@ -20,3 +20,5 @@ clean:
 $(BIN)/%.o : $(SRC)/%.cpp
 	$(CXX) $(CFLAGS) -Iinclude/ -c -o $@ $<
 
+$(BIN)/trainer: $(SRC)/trainer/trainer.cpp
+	$(CXX) $(CFLAGS) -o $@ $^ $(LIBS)
