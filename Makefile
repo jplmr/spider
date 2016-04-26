@@ -1,6 +1,6 @@
 CXX = g++
-CFLAGS = `pkg-config --cflags opencv`
-LIBS = `pkg-config --libs opencv`
+CFLAGS = `pkg-config --cflags opencv x11`
+LIBS = `pkg-config --libs opencv x11`
 SRC = src
 BIN = bin
 
@@ -21,4 +21,7 @@ $(BIN)/%.o : $(SRC)/%.cpp
 	$(CXX) $(CFLAGS) -Iinclude/ -c -o $@ $<
 
 $(BIN)/trainer: $(SRC)/trainer/trainer.cpp
+	$(CXX) $(CFLAGS) -o $@ $^ $(LIBS)
+
+$(BIN)/control: $(SRC)/control.cpp
 	$(CXX) $(CFLAGS) -o $@ $^ $(LIBS)
