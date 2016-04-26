@@ -25,7 +25,7 @@ void processFrame(Mat frame, const std::string window);
 
 int dispvid(int argc, char **argv) {
 
-    const std::string src = "assets/spider_sample_1.mp4";
+    const std::string src = "assets/spider_sample_2.mp4";
     const std::string window = "video";
     VideoCapture capt(src);
     namedWindow(window, WINDOW_AUTOSIZE);
@@ -60,6 +60,8 @@ int dispvid(int argc, char **argv) {
 
     return 0;
 }
+
+int lastY = INT_MAX;
 
 void processFrame(Mat frame, const std::string window) {
     int spiderCol = frame.cols * 0.242;
@@ -115,9 +117,10 @@ void processFrame(Mat frame, const std::string window) {
 
     // show diagnostic info
     std::ostringstream os;
-    os << "y: " << max;
+    os << "y: " << max << ", tap: " << ((max < lastY) ? "X" : "_");
     putText(frame, os.str(), Point(0, frame.rows - frame.rows / 10), FONT_HERSHEY_SIMPLEX, 1.5, BLACK, 2);
+    lastY = max;
 
     imshow(window, frame);
-    waitKey(1);
+    waitKey(15);
 }
