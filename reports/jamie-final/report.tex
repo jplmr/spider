@@ -49,7 +49,7 @@
 
 ``Spider Square'' is a side-scrolling mobile game in which the player taps the
 screen to swing their character to the right. The screen continually scrolls
-right to left and the player's objective is to advance as far as possible
+from right to left and the player's objective is to advance as far as possible
 without colliding with the floor, ceiling, or any obstacles that appear in the
 course.
 
@@ -59,7 +59,6 @@ course.
     \caption{Spider Square screenshot}
     \label{fig:spider}
 \end{figure}
-
 
 As shown in Figure \ref{fig:spider}, the blue square is the player's character,
 with the red floor, ceiling, and blocks represent obstacles that destroy the
@@ -76,6 +75,16 @@ the game in such a way that the player progressed as far as possible without
 colliding with the stage.
 
 \section{Methodology}
+
+We began the project by performing general research in computer vision,
+artificial neural networks, camera delay metrics, and USB general purpose
+input-output (GPIO) controllers. For our research stage, I focused on the
+computer vision and web camera research while Haris opted to plan the
+construction and wiring of the robot and begin research on artificial neural
+networks and evolutionary algorithms.
+
+We ultimately decided to use OpenCV, an open-source computer vision library
+written in C++, to perform the image analysis. 
 
 \section{Results}
 
