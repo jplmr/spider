@@ -251,7 +251,7 @@ int main() {
 
         frame = getCapture(display, win);
         if(frame.rows > 0) {
-            frame = frame(Rect(240,65,800,600));
+            frame = frame(Rect(45,65,800,600));
             processFrame();
             doMove();
             imshow("vmware", frame);

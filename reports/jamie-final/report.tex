@@ -10,8 +10,9 @@
 \usepackage[margin=1.0in]{geometry}
 
 \titleformat*{\section}{\large\bfseries}
+\titleformat*{\subsection}{\bfseries}
 \setlength{\columnsep}{.25in}
-
+\setlength{\parskip}{.25em}
 
 \lstloadlanguages{C++}
 \lstset{language=C++,
@@ -81,16 +82,42 @@ artificial neural networks, camera delay metrics, and USB general purpose
 input-output (GPIO) controllers. For our research stage, I focused on the
 computer vision and web camera research while Haris opted to plan the
 construction and wiring of the robot and begin research on artificial neural
-networks and evolutionary algorithms.
+networks and evolutionary algorithms. We then constructed the robot and wrote
+the software to play the game, both on a real device and on an emulated one.
 
-We ultimately decided to use OpenCV, an open-source computer vision library
-written in C++, to perform the image analysis. 
+\subsection{Hardware Setup}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{spider.png}
+    \caption{Spider Square screenshot}
+    \label{fig:lego}
+\end{figure}
+
+
+We used a Logitech C270 USB2.0 web camera with a resolution of 1280x720. This
+camera is capable of up to 30 frames per second video, for a time-between-frames
+of 33 milliseconds. Unfortunately the sensor is at a fixed focal distance and
+doesn't contain the functionaility to manually set the ISO, both of which can be
+overcome by sanitizing the test environment (namely turning off the lights and
+setting the phone's brightness to a high value).
+
+Since image processing can be fairly intense and optimization was not a goal of
+this project, we opted to use a desktop machine for the processing power and a
+USB GPIO controller to control the stylus arm of the robot. We decided to use an
+Adafruit FT232H USB breakout board as it met our specifications: output a high
+or low voltage over USB given some trigger in either C++ or Python code. Since
+the GPIO pins are all digital and our servo motor runs on an analog control
+signal, we created a small voltage divider to step the 3.3V output to a
+reasonably small value, as the full 3.3V would cause the servo to move in a
+large arc. The final setup is pictured in Figure \ref{fig:lego}.
+
 
 \section{Results}
 
 \section{Conclusion}
 
 \section{References}
-
+%http://support.logitech.com/en_us/article/17556
 
 \end{document}

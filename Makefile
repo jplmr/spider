@@ -25,3 +25,6 @@ $(BIN)/trainer: $(SRC)/trainer/trainer.cpp
 
 $(BIN)/control: $(SRC)/control.cpp
 	$(CXX) $(CFLAGS) -o $@ $^ $(LIBS)
+
+$(BIN)/reaction: $(SRC)/reaction.cpp
+	$(CXX) $(CFLAGS) -o $@ $^ $(LIBS)
